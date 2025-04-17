@@ -50,7 +50,7 @@ variable "rds_password" {
   description = "The password for the RDS database"
   type        = string
   sensitive   = true
-  default     = "admin"
+  default     = "admin@123"
 }
 
 variable "ami_id" {
