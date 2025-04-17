@@ -4,6 +4,12 @@ resource "aws_instance" "web_server_1" {
   subnet_id                = var.public_subnet_1_id
   vpc_security_group_ids   = [var.security_group_id]
   associate_public_ip_address = true
+  ebs_optimized = true
+  monitoring = true
+  metadata_options {
+       http_endpoint = "enabled"
+       http_tokens   = "required"
+  }
 
   tags = {
     Name = "Instance A"
@@ -31,6 +37,12 @@ resource "aws_instance" "web_server_2" {
   subnet_id                = var.public_subnet_2_id
   vpc_security_group_ids   = [var.security_group_id]
   associate_public_ip_address = true
+  ebs_optimized = true
+  monitoring = true
+  metadata_options {
+       http_endpoint = "enabled"
+       http_tokens   = "required"
+  }
 
   tags = {
     Name = "Instance B"

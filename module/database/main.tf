@@ -11,7 +11,14 @@ resource "aws_db_instance" "mysql_db" {
   multi_az             = false
   storage_encrypted    = true
   skip_final_snapshot  = true
-  backup_retention_period = 7
+  backup_retention_period = 
+  monitoring_interval  = 5
+  AutoMinorVersionUpgrade: true
+  enabled_cloudwatch_logs_exports = ["general", "error", "slowquery"]
+  deletion_protection  = true
+  iam_database_authentication_enabled = true
+  copy_tags_to_snapshot     = true
+
 
   tags = {
     Name = "MySQL RDS Instance"
