@@ -21,7 +21,7 @@ resource "aws_instance" "web_server_1" {
               sudo systemctl enable nginx
 
               # Create a basic HTML page
-              echo "Hello Instance A" | sudo tee /usr/share/nginx/html/index.html > /dev/null
+              echo "Hello Instance A" | sudo tee /usr/share/nginx/html/index.html
               EOF
 }
 
@@ -48,6 +48,6 @@ resource "aws_instance" "web_server_2" {
               sudo systemctl enable nginx
 
               # Create a basic HTML page
-              echo "Hello  Instance B" | sudo tee /usr/share/nginx/html/index.html > /dev/null
+              echo "Hello  Instance B" | sudo tee /usr/share/nginx/html/index.html
               EOF
 }
