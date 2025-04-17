@@ -3,7 +3,7 @@ resource "aws_vpc" "main" {
   enable_dns_support = true
   enable_dns_hostnames = true
   tags = {
-    Name = "Main VPC"
+    Name = "my-vpc"
   }
 }
 
@@ -13,7 +13,7 @@ resource "aws_subnet" "public_subnet_1" {
   availability_zone       = "us-east-1a"
   map_public_ip_on_launch = true
   tags = {
-    Name = "Public Subnet 1"
+    Name = "Public Subnet A"
   }
 }
 
@@ -23,7 +23,7 @@ resource "aws_subnet" "public_subnet_2" {
   availability_zone       = "us-east-1b"
   map_public_ip_on_launch = true
   tags = {
-    Name = "Public Subnet 2"
+    Name = "Public Subnet B"
   }
 }
 
@@ -32,7 +32,7 @@ resource "aws_subnet" "private_subnet_1" {
   cidr_block              = var.private_subnet_cidr_1
   availability_zone       = "us-east-1a"
   tags = {
-    Name = "Private Subnet 1"
+    Name = "Private Subnet A"
   }
 }
 
@@ -41,7 +41,7 @@ resource "aws_subnet" "private_subnet_2" {
   cidr_block              = var.private_subnet_cidr_2
   availability_zone       = "us-east-1b"
   tags = {
-    Name = "Private Subnet 2"
+    Name = "Private Subnet B"
   }
 }
 

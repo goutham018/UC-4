@@ -6,7 +6,7 @@ resource "aws_instance" "web_server_1" {
   associate_public_ip_address = true
 
   tags = {
-    Name = "Web Server 1"
+    Name = "Instance A"
   }
 
   user_data = <<-EOF
@@ -21,7 +21,7 @@ resource "aws_instance" "web_server_1" {
               sudo systemctl enable nginx
 
               # Create a basic HTML page
-              echo "Hello from Web Server 1" | sudo tee /usr/share/nginx/html/index.html > /dev/null
+              echo "Hello Instance A" | sudo tee /usr/share/nginx/html/index.html > /dev/null
               EOF
 }
 
@@ -33,7 +33,7 @@ resource "aws_instance" "web_server_2" {
   associate_public_ip_address = true
 
   tags = {
-    Name = "Web Server 2"
+    Name = "Instance B"
   }
 
   user_data = <<-EOF
@@ -48,6 +48,6 @@ resource "aws_instance" "web_server_2" {
               sudo systemctl enable nginx
 
               # Create a basic HTML page
-              echo "Hello from Web Server 2" | sudo tee /usr/share/nginx/html/index.html > /dev/null
+              echo "Hello  Instance B" | sudo tee /usr/share/nginx/html/index.html > /dev/null
               EOF
 }

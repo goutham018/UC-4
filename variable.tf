@@ -3,10 +3,6 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "s3_bucket_name" {
-  description = "S3 bucket name for storing Terraform state"
-  default     = "alb-project-bucket123"
-}
 
 variable "vpc_cidr" {
   description = "CIDR block for the VPC"
@@ -47,14 +43,14 @@ variable "rds_instance_class" {
 variable "rds_username" {
   description = "The username for the RDS database"
   type        = string
-  default     = "Myrds1"
+  default     = "admin"
 }
 
 variable "rds_password" {
   description = "The password for the RDS database"
   type        = string
   sensitive   = true
-  default     = "Myrds123"
+  default     = "admin"
 }
 
 variable "ami_id" {
