@@ -12,8 +12,8 @@ module "vpc" {
   private_subnet_cidr_2  = var.private_subnet_cidr_2
 }
 
-module "sg-group" {
-  source = "./module/sg-group"
+module "sg" {
+  source = "./module/sg"
 
   vpc_id = module.vpc.vpc_id
 }
