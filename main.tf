@@ -25,7 +25,7 @@ module "ec2" {
   instance_type  = var.instance_type
   public_subnet_1_id = module.vpc.public_subnet_1_id
   public_subnet_2_id = module.vpc.public_subnet_2_id
-  security_group_id  = module.sg-group.web_sg_id
+  security_group_id  = module.sg.web_sg_id
 }
 
 module "database" {
@@ -36,5 +36,5 @@ module "database" {
   rds_password       = var.rds_password
   private_subnet_1_id = module.vpc.private_subnet_1_id
   private_subnet_2_id = module.vpc.private_subnet_2_id
-  security_group_id   = module.sg-group.db_sg_id
+  security_group_id   = module.sg.db_sg_id
 }
