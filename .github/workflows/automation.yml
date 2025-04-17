@@ -40,16 +40,22 @@ jobs:
       - name: Terraform Lint
         run: tflint
 
+      - name: Checkov Scan
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: .
+          framework: terraform
+
       - name: Terraform Init
         run: terraform init
 
       - name: Terraform Plan
         run: terraform plan
 
-      - name: Terraform Apply or Destroy
-        run: |
-          if [ "${{ github.event.inputs.action }}" = "destroy" ]; then
-            terraform destroy -auto-approve
-          else
-            terraform apply -auto-approve
-          fi
+      # - name: Terraform Apply or Destroy
+      #   run: |
+      #     if [ "${{ github.event.inputs.action }}" = "destroy" ]; then
+      #       terraform destroy -auto-approve
+      #     else
+      #       terraform apply -auto-approve
+      #     fi
