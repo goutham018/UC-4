@@ -13,5 +13,8 @@ config {
 # EC2 instance must be t2.micro only
 rule "aws_instance_invalid_type" {
   enabled = true
-  type = "t2.micro"
+}
+
+rule "aws_s3_bucket_public_access" {
+  enabled = true
 }
